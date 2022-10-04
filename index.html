@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Bookshelf</h1>
+    </header>
+    <main>
+        <div class="add-wrapper">
+            <button class="add-book main">+ add book</button>
+            <dialog class="create book"><!--  author, title, number of pages, whether it’s been read and anything else you might want.-->
+                <form method="dialog" action="" method="post">
+                    <input type="text" name="author" id="author" placeholder="Author" required> 
+                    <input type="text" name="title" id="title" placeholder="Title" required>
+                    <input type="number" name="pages" id="pages" placeholder="Number of pages" required>
+                    <select name="status" id="status">
+                        <option value="Have you read the book?">Have you read the book?</option>
+                        <option value="Read">Read</option>
+                        <option value="In process">In process</option>
+                        <option value="Not read">Not read</option>
+                    </select>
+                    <button class="add-book dialog">Add</button>
+                </form>
+            </dialog>
+        </div>
+        <dialog class="change book"><!--  author, title, number of pages, whether it’s been read and anything else you might want.-->
+            <p class="title"></p>
+            <p class="author"></p>
+            <p class="pages"></p>
+            <select name="status" id="status" class="status">
+                <option value="Read">Read</option>
+                <option value="In process">In process</option>
+                <option value="Not read">Not read</option>
+            </select>
+            <button class="remove">Remove</button>
+        </dialog>
+        <section class="shelf-1">
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
