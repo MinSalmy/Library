@@ -16,24 +16,21 @@
         <h1>Bookshelf</h1>
     </header>
     <main>
-        <div class="add-wrapper">
-            <button class="add-book main">+ add book</button>
-            <dialog class="create book"><!--  author, title, number of pages, whether it’s been read and anything else you might want.-->
-                <form method="dialog" action="" method="post">
-                    <input type="text" name="author" id="author" placeholder="Author" required> 
-                    <input type="text" name="title" id="title" placeholder="Title" required>
-                    <input type="number" name="pages" id="pages" placeholder="Number of pages" required>
-                    <select name="status" id="status">
-                        <option value="Have you read the book?">Have you read the book?</option>
-                        <option value="Read">Read</option>
-                        <option value="In process">In process</option>
-                        <option value="Not read">Not read</option>
-                    </select>
-                    <button class="add-book dialog">Add</button>
-                </form>
-            </dialog>
-        </div>
-        <dialog class="change book"><!--  author, title, number of pages, whether it’s been read and anything else you might want.-->
+        <dialog class="create-book"><!--  author, title, number of pages, whether it’s been read and anything else you might want.-->
+            <form method="dialog" action="" method="post">
+                <input type="text" name="author" id="author" placeholder="Author" required> 
+                <input type="text" name="title" id="title" placeholder="Title" required>
+                <input type="number" name="pages" id="pages" placeholder="Number of pages" required>
+                <select name="status" id="status">
+                    <option value="Have you read the book?">Have you read the book?</option>
+                    <option value="Read">Read</option>
+                    <option value="In process">In process</option>
+                    <option value="Not read">Not read</option>
+                </select>
+                <button class="add-book dialog">Add</button>
+            </form>
+        </dialog>
+        <dialog class="change-book"><!--  author, title, number of pages, whether it’s been read and anything else you might want.-->
             <p class="title"></p>
             <p class="author"></p>
             <p class="pages"></p>
@@ -44,8 +41,13 @@
             </select>
             <button class="remove">Remove</button>
         </dialog>
-        <section class="shelf-1">
+        <section class="bookshelf">
+            <div class="add-wrapper">
+                <button class="add-book main">+ Add book</button>            
+            </div>
+            <div class="shelf">
 
+            </div>
         </section>
     </main>
     <footer>

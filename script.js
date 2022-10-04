@@ -46,12 +46,15 @@ const library = new Library();
 // работа с интерфейсом
 
 const addBookButton = document.querySelector(".add-book.dialog");
-const bookshelf = document.querySelector(".shelf-1");
-const changeBookDialog = document.querySelector('.change.book');
+const bookshelf = document.querySelector(".shelf");
+const changeBookDialog = document.querySelector('.change-book');
+const addBookDialog = document.querySelector(".create-book");
 
 document.querySelector(".add-book.main").addEventListener("click", () => {
-    document.querySelector(".create.book").showModal();
+    addBookDialog.querySelector('form').reset();
+    addBookDialog.showModal();
 });
+addBookDialog.addEventListener('click', (event) => {if (event.target === addBookDialog) addBookDialog.close();});
 
 const updateBookshelf = () => {
     resetBookshelf();
@@ -61,7 +64,7 @@ const updateBookshelf = () => {
 }
   
 const resetBookshelf = () => {
-    bookshelf.innerHTML = '';
+    bookshelf.innerHTML = "";
 }
 
 const createBookCard = (book) => {
@@ -77,6 +80,11 @@ const createBookCard = (book) => {
 
     bookCard.classList.add('book');
     bookCard.addEventListener('click', () => chooseBookCard(book));
+    title.classList.add('title');
+    author.classList.add('author');
+    pages.classList.add('pages');
+    status.classList.add("status");
+
     title.textContent = book.title;
     author.textContent = book.author;
     pages.textContent = book.pages;
@@ -129,11 +137,11 @@ addBookButton.addEventListener('click', () => {
 });
 
 function chooseBookCard(book) {
-    const title = document.querySelector('.change.book>title');
-    const author = document.querySelector('.change.book>author');
-    const pages = document.querySelector('.change.book>pages');
-    const status = document.querySelector('.change.book>select');
-    const removeButton = document.querySelector('.change.book>button');
+    const title = document.querySelector('.change-book>title');
+    const author = document.querySelector('.change-book>author');
+    const pages = document.querySelector('.change-book>pages');
+    const status = document.querySelector('.change-book>select');
+    const removeButton = document.querySelector('.change-book>button');
 
     title.textContent = book.title;
     author.textContent = book.author;
@@ -141,7 +149,7 @@ function chooseBookCard(book) {
     status.value = book.status;
     //removeButton.onclick = removeBook(book);
     removeButton.addEventListener('click', () => removeBook(book));
-    document.querySelector(".change.book").showModal();
+    document.querySelector(".change-book").showModal();
 }
 
 function removeBook(book) {

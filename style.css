@@ -1,3 +1,7 @@
+:root {
+    --brown: #A87328;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,14 +9,98 @@
 
 body {
     height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
 
 h1 {
     font-family: 'Marck Script', cursive;
+    font-size: 56px;
+    padding: 30px 0px 0px ;
 }
 
-dialog {
-    margin: auto;
+header {
+    padding-left: 20%;
+    height: 100px;
+}
+
+.add-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.add-book.main{
+    width: 500px;
+    height: 100px;
+    font-weight: bold;
+    font-size: 24px;
+}
+/*
+.bookshelf {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    border: 10px solid brown ;
+    overflow: hidden;
+    background-image: linear-gradient(darken(brown, 32%), darken(brown, 30%) 220px, 
+      lighten(brown, 4%) 220px, lighten(brown, 4%) 222px,
+      brown 222px, brown 228px,
+    darken(brown, 4%) 228px, darken(brown, 4%) 230px);
+    background-size: 10px 230px;
+    box-shadow: 0px 1000px 0px 400px #7A7668;
+}*/
+
+.bookshelf {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 150px;
+    gap: 20px;
+    background-color: #c5bfbe;
+}
+
+main {
+    background-color: #240f0a;
+}
+
+.book {
+    height: 200px;
+    width: 40px;
+    float: left;
+    font-size: 0.9em;
+    /*font-family: Verdana, sans-serif;*/
+    margin-bottom: 10px;
+    margin-top: 20px;
+    transition: transform 0.4s ease;
+    display: grid;
+    grid-template-rows: 1fr 1fr 20px;
+}
+
+.book .title {
+    grid-row: 1 / 2;
+    padding: 0;
+    font-size: 1em;
+    transform-origin: 0% 0%;
+    transform: rotate(-0.25turn);/** translateY(-35px);*/
+    width: 170px;
+}
+  
+.book .author {
+    grid-row: 2 / 3;
+    padding: 0;
+    font-size: 0.7em;
+    transform-origin: 0 0;
+    transform: rotate(-0.25turn); /*translateY(-15px) translateX(-20px);*/
+    width: 150px;
+}
+
+.book .pages {
+    grid-row: 3 / 4;
+}
+
+.book:hover {
+    transform: scale(1.05);
 }
 
 dialog {
@@ -73,11 +161,11 @@ form {
 
 
 
-  *, *:before, *:after { 
+*, *:before, *:after { 
     box-sizing: inherit; 
-  }
-  *:before, *:after { 
+}
+*:before, *:after { 
     content: ""; 
     position: absolute; 
-  } 
+} 
   
